@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Contact Us{% endblock %}
+{% block content %}
+<h2>Contact Us</h2>
+<p>If you have any questions or feedback, please feel free to get in touch.</p>
+<form action="{{ url_for('contact') }}" method="POST">
+    <!-- Add the CSRF token -->
+    <input name="csrf_token" type="hidden" value="{{ csrf_token() }}">
+
+    <div class="form-group" style="margin-bottom: 1em;">
+        <label for="name">Name</label><br>
+        <input id="name" name="name" placeholder="Your name" required style="width: 100%; padding: 0.5em;" type="text">
+    </div>
+    <div class="form-group" style="margin-bottom: 1em;">
+        <label for="email">Email</label><br>
+        <input id="email" name="email" placeholder="Your email" required style="width: 100%; padding: 0.5em;" type="email">
+    </div>
+    <div class="form-group" style="margin-bottom: 1em;">
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" placeholder="Your message" required rows="5"
+                  style="width: 100%; padding: 0.5em;"></textarea>
+    </div>
+    <div style="text-align: center;">
+        <button style="padding: 0.5em 1em;" type="submit">Send Message</button>
+    </div>
+</form>
+{% endblock %}

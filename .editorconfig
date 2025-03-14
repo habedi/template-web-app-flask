@@ -20,10 +20,14 @@ max_line_length = 100 # Limit lines to 100 characters
 [*.md]
 trim_trailing_whitespace = false # Don't remove trailing whitespace in Markdown files
 
-# Bash scripts
+# Shell scripts
 [*.sh]
 indent_size = 2
 
 # YAML files
-[*.yml]
+[*.{yml,yaml}]
 indent_size = 2
+
+# HTML files
+[*.html]
+max_line_length = 130

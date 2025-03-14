@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="dashboard-container" style="max-width: 800px; margin: auto; padding: 1em;">
+    <h1>Welcome to the Dashboard</h1>
+    <p>You are now logged in.</p>
+    <div style="text-align: center; margin-top: 2em;">
+        <a class="btn btn-secondary" href="{{ url_for('auth.logout') }}"
+           style="padding: 0.5em 1em; text-decoration: none; background-color: #6c757d; color: white; border-radius: 4px;">Logout</a>
+    </div>
+</div>
+{% endblock %}

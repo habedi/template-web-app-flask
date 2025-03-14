@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block content %}
+<h2>About This Project</h2>
+<p>
+    This project is a template for building Flask web applications. It provides many features right out of the box, including user
+    authentication, database migrations, error handling, and modular blueprints to help you quickly get started on your own
+    projects.
+</p>
+<p>
+    <strong>Features:</strong>
+</p>
+<ul>
+    <li>Modular Blueprint-based structure</li>
+    <li>Database support with Flask SQLAlchemy and migrations</li>
+    <li>User authentication with Flask-Login</li>
+    <li>CSRF protection via Flask-WTF</li>
+    <li>Responsive design with a top navigation bar</li>
+</ul>
+<h3>About the Author</h3>
+<p>
+    This template was created by a person passionate about building tools that could help solve real-world problems.
+    It is designed to be a starting point for anyone looking to build their own web applications with Flask.
+</p>
+<img alt="About Banner" src="{{ url_for('static', filename='images/about-banner.png') }}" style="max-width: 100%; height: auto;">
+{% endblock %}

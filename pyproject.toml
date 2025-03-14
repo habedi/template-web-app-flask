@@ -1,37 +1,43 @@
 [tool.poetry]
-name = "template-python-library"
+name = "template-web-app-flask"
 version = "0.1.0"
-description = "A template repository to help with developing Python libraries."
+description = "A template for a web application built with Flask"
 authors = ["Hassan Abedi <hassan.abedi.t@gmail.com>"]
 maintainers = ["Hassan Abedi <hassan.abedi.t@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-include = ["README.md", "LICENSE"]
+include = ["README.md"]
 packages = [{ include = "src", from = "." }]
-repository = "https://github.com/habedi/template-python-library"
-documentation = "https://github.com/habedi/template-python-library/blob/main/docs/index.md"
-classifiers = [
-    "Topic :: Software Development :: Libraries",
-    "Topic :: Software Development :: Libraries :: Python Modules",
-]
-keywords = ["template", "python", "library"]
+repository = "https://github.com/habedi/template-web-app-flask"
+documentation = "https://github.com/habedi/template-web-app-flask/blob/main/docs/README.md"
+keywords = ["template", "python", "web", "flask"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+flask = "^3.1.0"
+flask-migrate = "^4.1.0"
+flask-wtf = "^1.2.2"
+flask-admin = "^1.6.1"
+flask-login = "^0.6.3"
+sqlalchemy = "^2.0.39"
+gunicorn = "^23.0.0"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies] # Development dependencies (need `--with dev` flag)
 poetry-dynamic-versioning = "^1.4.0"
 pytest = "^8.0.1"
 pytest-cov = "^6.0.0"
 pytest-mock = "^3.14.0"
+pytest-benchmark = "^5.1.0"
 mypy = "^1.11.1"
-ruff = "^0.9.3"
-
+ruff = "^0.10.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
-pythonpath = [".", "package"]
+pythonpath = [".", "src"]
 
 [tool.mypy]
 python_version = "3.10"
@@ -68,7 +74,10 @@ exclude = [
     "build",
     "dist",
     "node_modules",
-    "venv"
+    "venv",
+    # Ignore the following additional directories and files
+    "docs",
+    "tests",
 ]
 line-length = 100
 indent-width = 4

@@ -1,4 +1,4 @@
-name: Run Linting
+name: Run Linters
 
 on:
   workflow_dispatch: # Only enable manual runs for now
@@ -25,13 +25,11 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      # Install dependencies
       - name: Install Dependencies
         run: |
           make setup
           make install
 
-        # Run linting checks
       - name: Run Tests with Coverage
         run: |
           make lint

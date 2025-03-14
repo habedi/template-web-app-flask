@@ -1,0 +1,33 @@
+# Ignore git directory
+.git
+.gitignore
+
+# Python bytecode, caches, and build artifacts
+__pycache__
+*.pyo
+*.pyd
+.pytest_cache
+.mypy_cache
+.tox
+.eggs
+*.egg-info
+
+# Build, distribution, and virtual environment directories
+build
+dist
+venv
+env
+
+# Log files and database files
+*.log
+
+# Instance folder (if used for local configuration)
+instance
+
+# Documentation (if not needed in image)
+docs
+
+# IDE/project files
+*.iml
+.idea
+.vscode

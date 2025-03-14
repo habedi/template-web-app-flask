@@ -1,0 +1,88 @@
+/* Basic reset and typography */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Container styling */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+/* Flash messages styling */
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+.flashes li {
+    padding: 0.75em;
+    margin-bottom: 0.5em;
+    border-radius: 4px;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+/* Navigation Ribbon */
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 0.5em 0;
+}
+
+/* Navbar container styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+/* Logged-in user info styling */
+.nav-left {
+    font-size: 0.9em;
+    color: #fff;
+}
+
+/* Navigation links styling */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1em;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #495057;
+    border-radius: 4px;
+}

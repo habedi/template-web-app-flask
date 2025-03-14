@@ -1,8 +1,11 @@
-name: Tests
+name: Rus Tests
 
 on:
   workflow_dispatch: # Only enable manual runs for now
   workflow_call: # Make this workflow available to be called by other workflows
+  push:
+    tags:
+      - 'v*' # Trigger on version tags
 
 jobs:
   build:
@@ -22,20 +25,20 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      # Install dependencies
       - name: Install Dependencies
         run: |
           make setup
           make install
 
-        # Run tests and generate the coverage report
+      - name: Instantiate Database
+        run: |
+          make db-init
+
       - name: Run Tests with Coverage
         run: |
-          # make coverage
+          make cov
           make codecov
-        continue-on-error: false
 
-        # Upload the coverage report to Codecov
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
         with:
