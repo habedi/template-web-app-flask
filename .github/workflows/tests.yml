@@ -1,0 +1,43 @@
+name: Tests
+
+on:
+  workflow_dispatch: # Only enable manual runs for now
+  workflow_call: # Make this workflow available to be called by other workflows
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        # Define the Python versions to test against
+        python-version: [ "3.10", "3.11", "3.12", "3.13" ]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: |
+          make setup
+          make install
+
+        # Run tests and generate the coverage report
+      - name: Run Tests with Coverage
+        run: |
+          # make coverage
+          make codecov
+        continue-on-error: false
+
+        # Upload the coverage report to Codecov
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+        continue-on-error: true
