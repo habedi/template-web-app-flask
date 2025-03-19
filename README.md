@@ -16,11 +16,11 @@ I share it here in case it might be useful to others.
 ### Features
 
 - Minimalistic template for building Flask web applications
-- Modular blueprint-based structure** for easy project organization
-- Pre-configured settings** for development, testing, and production environments
-- Pre-configured GitHub Actions** for automated testing and linting
-- Makefile for managing the development workflow** (testing, linting, database migrations, etc.)
-- Poetry-based dependency management** for a modern Python workflow
+- Modular blueprint-based structure for easy project organization
+- Pre-configured settings for development, testing, and production environments
+- Pre-configured GitHub Actions for automated testing and linting
+- Makefile for managing the development workflow (testing, linting, database migrations, etc.)
+- Poetry-based dependency management for a modern Python workflow
 - Large collection of pre-installed Flask extensions (plugins):
     - Security & Authentication
         - Flask-Login: User login and session management
@@ -33,18 +33,18 @@ I share it here in case it might be useful to others.
         - Flask-Caching: Adds caching support for improved performance
         - Flask-SQLAlchemy-Cache: Adds caching to SQLAlchemy queries
         - SQLAlchemy-Utils: Extra utilities for SQLAlchemy (UUIDs, JSON fields, etc.)
-    - API & Real-Time Features
+    - API & Real-Time Communication
         - Flask-RESTful: REST API support for Flask applications
         - Flask-GraphQL: GraphQL support using Graphene
         - Flask-SocketIO: WebSocket support for real-time applications
         - Flask-APScheduler: Background job scheduling (cron-like tasks)
         - Flask-HTMX: Enables dynamic content updates with minimal JavaScript
-    - Frontend & UI Enhancements
+    - Frontend & UI
         - Flask-Bootstrap: Pre-built Bootstrap integration
         - Flask-Themes: Support for multiple UI themes
         - Flask-Flatpages: Static page rendering (Markdown, reStructuredText, etc.)
         - Flask-Dropzone: Drag-and-drop file uploads with preview support
-    - File Handling & Miscellaneous
+    - File Handling & Misc Utilities
         - Flask-Reuploaded: Maintained fork of Flask-Uploads for file management
         - Flask-Mail: Email sending support (e.g., password resets, notifications)
         - Flask-Gravatar: Automatic Gravatar integration
