@@ -10,17 +10,30 @@ basedir = os.path.abspath(os.path.join(os.path.dirname(__file__), "db", "instanc
 
 
 class Config:
-    """Base configuration"""
+    """Base configuration for all environments"""
 
+    DEBUG = False
+    TESTING = False
+    BOOTSTRAP_FONTAWESOME = True
+    CSRF_ENABLED = True
     SECRET_KEY = os.getenv("SECRET_KEY", "supersecretkey")  # Use env var, fallback to default
-    SQLALCHEMY_DATABASE_URI = os.getenv(
-        "DATABASE_URL", "sqlite:///" + os.path.join(basedir, "site.db")
-    )
+    SQLALCHEMY_DATABASE_URI = \
+        os.getenv("DATABASE_URL", "sqlite:///" + os.path.join(basedir, "site.db"))
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    # See https://www.google.com/recaptcha/admin/create
+    # RECAPTCHA_PUBLIC_KEY = "PUT_YOUR_RECAPTCHA_PUBLIC_KEY_HERE"
+    # RECAPTCHA_PRIVATE_KEY = "PUT_YOUR_RECAPTCHA_PRIVATE_KEY_HERE"
 
 
 class DevelopmentConfig(Config):
     DEBUG = True
+
+
+class TestingConfig(Config):
+    TESTING = True
+    WTF_CSRF_ENABLED = False
+    SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "test.db")
 
 
 class ProductionConfig(Config):
