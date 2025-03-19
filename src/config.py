@@ -17,8 +17,9 @@ class Config:
     BOOTSTRAP_FONTAWESOME = True
     CSRF_ENABLED = True
     SECRET_KEY = os.getenv("SECRET_KEY", "supersecretkey")  # Use env var, fallback to default
-    SQLALCHEMY_DATABASE_URI = \
-        os.getenv("DATABASE_URL", "sqlite:///" + os.path.join(basedir, "site.db"))
+    SQLALCHEMY_DATABASE_URI = os.getenv(
+        "DATABASE_URL", "sqlite:///" + os.path.join(basedir, "site.db")
+    )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # See https://www.google.com/recaptcha/admin/create
