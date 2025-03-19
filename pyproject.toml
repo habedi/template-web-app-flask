@@ -3,14 +3,10 @@ name = "template-web-app-flask"
 version = "0.1.0"
 description = "A template for a web application built with Flask"
 authors = ["Hassan Abedi <hassan.abedi.t@gmail.com>"]
-maintainers = ["Hassan Abedi <hassan.abedi.t@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-include = ["README.md"]
-packages = [{ include = "src", from = "." }]
 repository = "https://github.com/habedi/template-web-app-flask"
 documentation = "https://github.com/habedi/template-web-app-flask/blob/main/docs/README.md"
-keywords = ["template", "python", "web", "flask"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
