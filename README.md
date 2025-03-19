@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/badge/license-MIT-007ec6?style=flat&labelColor=282c34&logo=open-source-initiative)](https://github.com/habedi/template-web-app-flask/blob/main/LICENSE)
 
 This is a template for building [Flask](https://flask.palletsprojects.com/en/stable/) web applications.
-It provides many features right out of the box, including user authentication, database migrations,
+It provides many useful features right out of the box, including user authentication, database migrations,
 and modular blueprints to help you quickly get started on your projects.
 I share it here in case it might be useful to others.
 
