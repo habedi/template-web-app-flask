@@ -13,8 +13,8 @@ documentation = "https://github.com/habedi/template-web-app-flask/blob/main/docs
 keywords = ["template", "python", "web", "flask"]
 
 [tool.poetry.dependencies]
-python-dotenv = "^1.0.1"
 python = "^3.10"
+python-dotenv = "^1.0.1"
 flask = "^3.1.0"
 gunicorn = "^23.0.0"
 sqlalchemy = "^2.0.39"
