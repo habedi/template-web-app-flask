@@ -19,7 +19,7 @@ I share it here in case it might be useful to others.
 - Modular blueprint-based structure for easy project organization
 - Pre-configured settings for development, testing, and production environments
 - Pre-configured GitHub Actions for automated testing and linting
-- Makefile for managing the development workflow (testing, linting, database migrations, etc.)
+- Makefile for managing the development workflow (testing, linting, database migrations, containerization, etc.)
 - Poetry-based dependency management for a modern Python workflow
 - Large collection of pre-installed Flask extensions (plugins):
     - Security & Authentication
