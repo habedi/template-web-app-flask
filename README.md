@@ -15,12 +15,25 @@ I share it here in case it might be useful to others.
 
 ### Features
 
-- Minimalistic Flask web application template
+- Minimalistic template for building Flask web applications
 - Modular blueprint-based structure
 - Database support with Flask-SQLAlchemy and migrations
 - User authentication with Flask-Login
 - CSRF protection via Flask-WTF
 - Responsive design with a top navigation bar
+- Large collection of pre-installed Flask extensions:
+    - Flask-Login: User session management
+    - Flask-Bootstrap: Ready-to-use Twitter Bootstrap
+    - Flask-Uploads: Handle file uploading and serving
+    - Flask-Cache: Adds cache support
+    - Flask-Admin: Admin interface module
+    - Flask-Flatpages: Flat static pages based on text files
+    - Flask-Gravatar: Easy Gravatar integration
+    - Flask-Mail: Easy mail sending and unittesting support
+    - Flask-Restless: Simple generation of ReSTful APIs
+    - Flask-SQLAlchemy: Adds SQLAlchemy support
+    - Flask-Themes: Support for a wide range of appearances
+    - Flask-WTF: Integration of Flask and WTForms, including CSRF, file upload, and reCAPTCHA
 
 ### Getting Started
 
