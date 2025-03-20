@@ -40,7 +40,7 @@ I share it here in case it might be useful to others.
         - Flask-APScheduler: Background job scheduling (cron-like tasks)
         - Flask-HTMX: Enables dynamic content updates with minimal JavaScript
     - Frontend & UI
-        - Flask-Bootstrap: Pre-built Bootstrap integration
+        - Bootstrap-Flask: Pre-built Bootstrap integration
         - Flask-Themes: Support for multiple UI themes
         - Flask-Flatpages: Static page rendering (Markdown, reStructuredText, etc.)
         - Flask-Dropzone: Drag-and-drop file uploads with preview support
