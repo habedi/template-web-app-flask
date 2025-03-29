@@ -3,7 +3,7 @@ ifneq (,$(wildcard ./.env))
     include .env
     export $(shell sed 's/=.*//' .env)
 else
-    $(warning .env file not found. No environment variables loaded from .env)
+    $(warning .env file not found. No environment variables loaded.)
 endif
 
 # Variables
