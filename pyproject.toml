@@ -5,12 +5,10 @@ description = "A template for a web application built with Flask"
 authors = ["Hassan Abedi <hassan.abedi.t@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/habedi/template-web-app-flask"
-documentation = "https://github.com/habedi/template-web-app-flask/blob/main/docs/README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-python-dotenv = "^1.0.1"
+python-dotenv = "^1.1.0"
 flask = "^3.1.0"
 gunicorn = "^23.0.0"
 sqlalchemy = "^2.0.39"

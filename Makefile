@@ -1,3 +1,11 @@
+# Load the environment variables in the .env file if it exists
+ifneq (,$(wildcard ./.env))
+    include .env
+    export $(shell sed 's/=.*//' .env)
+else
+    $(warning .env file not found. No environment variables loaded from .env)
+endif
+
 # Variables
 PYTHON         := python
 PIP            := pip
