@@ -21,6 +21,7 @@ SHELL          := /bin/bash
 MANAGER := src.manage
 IMAGE_NAME := my-flask-app-image
 CONTAINER_NAME := my-flask-app
+MAKEFILE_LIST := Makefile
 
 # Default target
 .DEFAULT_GOAL := help

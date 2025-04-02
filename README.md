@@ -63,7 +63,7 @@ sudo sudo apt-get install make python3-pip docker.io docker-compose
 pip install poetry
 
 # Install the Python dependencies (must be run in the project root directory)
-poetry install --no-root
+poetry install --no-root --with dev
 
 # Activate the Poetry environment
 poetry shell
