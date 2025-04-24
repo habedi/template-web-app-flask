@@ -1,3 +1,11 @@
+# Load the environment variables in the .env file if it exists
+ifneq (,$(wildcard ./.env))
+    include .env
+    export $(shell sed 's/=.*//' .env)
+else
+    $(warning .env file not found. No environment variables loaded.)
+endif
+
 # Variables
 PYTHON         := python
 PIP            := pip
@@ -23,7 +31,7 @@ help: ## Show this help message
 	awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 ####################################################################################################
-## Python targets
+## Python Targets
 ####################################################################################################
 
 .PHONY: setup
@@ -81,7 +89,7 @@ check: lint test typecheck ## Run lint, tests, and typecheck
 all: install check ## Install dependencies and run checks
 
 ####################################################################################################
-## Flask targets
+## Flask Targets
 ####################################################################################################
 
 .PHONY: make-admin
@@ -132,7 +140,7 @@ db-reset: ## Drop and recreate the database (DANGER: Deletes all data!)
 	fi'
 
 ####################################################################################################
-## Docker targets
+## Docker Targets
 ####################################################################################################
 
 .PHONY: docker-build
