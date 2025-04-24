@@ -36,33 +36,26 @@ flask-apscheduler = "^1.13.1"
 flask-compress = "^1.17"
 bootstrap-flask = "^2.4.2"
 
-[tool.poetry.group.dev.dependencies] # Development dependencies (need `--with dev` flag)
-poetry-dynamic-versioning = "^1.4.0"
+[tool.poetry.group.dev.dependencies] # Development dependencies (need `--with=dev` flag)
 pytest = "^8.0.1"
 pytest-cov = "^6.0.0"
 pytest-mock = "^3.14.0"
 pytest-benchmark = "^5.1.0"
 mypy = "^1.11.1"
 ruff = "^0.10.0"
+pyright = "^1.1.399"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
+# Pytest configuration
 [tool.pytest.ini_options]
 pythonpath = [".", "src"]
 
+# Mypy configuration
 [tool.mypy]
 python_version = "3.10"
 ignore_missing_imports = true
 disallow_untyped_calls = true
 strict_optional = true
 warn_redundant_casts = true
-
-[tool.poetry-dynamic-versioning]
-enable = true
-vcs = "git"
-versioning = "semver"  # Semantic Versioning
 
 # Ruff configuration (Edit as needed)
 [tool.ruff]
@@ -118,3 +111,10 @@ convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*.py" = []
+
+# Pyright configuration
+[tool.pyright]
+include = ["src", "tests"]
+venvPath = "."
+venv = ".venv"
+strict = ["src/**/*.py"]
