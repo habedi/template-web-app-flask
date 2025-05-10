@@ -59,14 +59,14 @@ Install the required dependencies using [Poetry](https://python-poetry.org/):
 # Install the required system dependencies like GNU Make, Pip, and Docker (for Debian-based systems)
 sudo sudo apt-get install make python3-pip docker.io docker-compose
 
-# Install Poetry
+# Install Poetry (version 2.0 or higher)
 pip install poetry
 
 # Install the Python dependencies (must be run in the project root directory)
 poetry install --no-root
 
 # Activate the Poetry environment
-poetry shell
+poetry env activate
 ```
 
 Check out the [Makefile](Makefile) for available commands to manage the development workflow of the project.

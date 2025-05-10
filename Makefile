@@ -26,9 +26,9 @@ CONTAINER_NAME := my-flask-app
 .DEFAULT_GOAL := help
 
 .PHONY: help
-help: ## Show this help message
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
-	awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+help: ## Show help messages for all available targets
+	@grep -E '^[a-zA-Z_-]+:.*## .*$$' Makefile | \
+	awk 'BEGIN {FS = ":.*## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 ####################################################################################################
 ## Python Targets
@@ -46,7 +46,7 @@ install: ## Install Python dependencies for production
 
 .PHONY: install-dev
 install-dev: ## Install Python dependencies for development
-	@$(POETRY) install --no-root --with dev
+	@$(POETRY) install --no-root --all-extras
 
 .PHONY: update
 update: ## Update Python dependencies
@@ -58,15 +58,15 @@ test: ## Run the tests
 
 .PHONY: lint
 lint: ## Run the linter checks (with autofix enabled)
-	@$(POETRY) run ruff check --fix .
+	@$(POETRY) run ruff check --fix
 
 .PHONY: format
 format: ## Format the Python code
-	@$(POETRY) run ruff format .
+	@$(POETRY) run ruff format
 
 .PHONY: typecheck
 typecheck: ## Typecheck Python code
-	@$(POETRY) run mypy -p src
+	@$(POETRY) run mypy .
 
 .PHONY: clean
 clean: ## Remove temporary files and directories
@@ -87,6 +87,14 @@ check: lint test typecheck ## Run lint, tests, and typecheck
 
 .PHONY: all
 all: install check ## Install dependencies and run checks
+
+.PHONY: setup-hooks
+setup-hooks: ## Set up pre-commit hooks
+	@$(POETRY) run pre-commit install
+
+.PHONY: test-hooks
+test-hooks: ## Run pre-commit hooks on all files
+	@$(POETRY) run pre-commit run --all-files
 
 ####################################################################################################
 ## Flask Targets
