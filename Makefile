@@ -46,7 +46,7 @@ install: ## Install Python dependencies for production
 
 .PHONY: install-dev
 install-dev: ## Install Python dependencies for development
-	@$(POETRY) install --no-root --with dev
+	@$(POETRY) install --no-root --all-extras
 
 .PHONY: update
 update: ## Update Python dependencies
