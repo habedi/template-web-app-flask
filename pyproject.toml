@@ -1,55 +1,58 @@
-[tool.poetry]
+[project]
 name = "template-web-app-flask"
 version = "0.1.0"
 description = "A template for a web application built with Flask"
-authors = ["Hassan Abedi <hassan.abedi.t@gmail.com>"]
-license = "MIT"
+authors = [
+    { name = "Hassan Abedi", email = "hassan.abedi.t@gmail.com" }
+]
+license = {text = "MIT"}
 readme = "README.md"
+requires-python =  ">=3.10,<4.0"
 
-[tool.poetry.dependencies]
-python = "^3.10"
-python-dotenv = "^1.1.0"
-flask = "^3.1.0"
-gunicorn = "^23.0.0"
-sqlalchemy = "^2.0.39"
-sqlalchemy-utils = "^0.41.2"
-flask-sqlalchemy-cache = "^0.1.5"
-flask-migrate = "^4.1.0"
-flask-wtf = "^1.2.2"
-flask-admin = "^1.6.1"
-flask-login = "^0.6.3"
-flask-caching = "^2.3.1"
-flask-gravatar = "^0.5.0"
-flask-themes = "^0.1.3"
-flask-mail = "^0.10.0"
-flask-flatpages = "^0.8.3"
-flask-dropzone = "^2.0.0"
-flask-htmx = "^0.4.0"
-flask-restful = "^0.3.10"
-flask-reuploaded = "^1.4.0"
-flask-talisman = "^1.1.0"
-flask-injector = "^0.15.0"
-flask-graphql = "^2.0.1"
-flask-socketio = "^5.5.1"
-flask-limiter = "^3.12"
-flask-apscheduler = "^1.13.1"
-flask-compress = "^1.17"
-bootstrap-flask = "^2.4.2"
+dependencies = [
+    "python-dotenv>=1.1.0",
+    "flask>=3.1.0",
+    "gunicorn>=23.0.0",
+    "sqlalchemy>=2.0.39",
+    "sqlalchemy-utils>=0.41.2",
+    "flask-sqlalchemy-cache>=0.1.5",
+    "flask-migrate>=4.1.0",
+    "flask-wtf>=1.2.2",
+    "flask-admin>=1.6.1",
+    "flask-login>=0.6.3",
+    "flask-caching>=2.3.1",
+    "flask-gravatar>=0.5.0",
+    "flask-themes>=0.1.3",
+    "flask-mail>=0.10.0",
+    "flask-flatpages>=0.8.3",
+    "flask-dropzone>=2.0.0",
+    "flask-htmx>=0.4.0",
+    "flask-restful>=0.3.10",
+    "flask-reuploaded>=1.4.0",
+    "flask-talisman>=1.1.0",
+    "flask-injector>=0.15.0",
+    "flask-graphql>=2.0.1",
+    "flask-socketio>=5.5.1",
+    "flask-limiter>=3.12",
+    "flask-apscheduler>=1.13.1",
+    "flask-compress>=1.17",
+    "bootstrap-flask>=2.4.2"
+]
 
-[tool.poetry.group.dev.dependencies] # Development dependencies (need `--with=dev` flag)
-pytest = "^8.0.1"
-pytest-cov = "^6.0.0"
-pytest-mock = "^3.14.0"
-pytest-benchmark = "^5.1.0"
-mypy = "^1.11.1"
-ruff = "^0.10.0"
-pyright = "^1.1.399"
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.1",
+    "pytest-cov>=6.0.0",
+    "pytest-mock>=3.14.0",
+    "pytest-benchmark>=5.1.0",
+    "mypy>=1.11.1",
+    "ruff>=0.10.0",
+    "pyright>=1.1.399"
+]
 
-# Pytest configuration
 [tool.pytest.ini_options]
 pythonpath = [".", "src"]
 
-# Mypy configuration
 [tool.mypy]
 python_version = "3.10"
 ignore_missing_imports = true
@@ -57,33 +60,11 @@ disallow_untyped_calls = true
 strict_optional = true
 warn_redundant_casts = true
 
-# Ruff configuration (Edit as needed)
 [tool.ruff]
 exclude = [
-    ".bzr",
-    ".direnv",
-    ".eggs",
-    ".git",
-    ".git-rewrite",
-    ".hg",
-    ".mypy_cache",
-    ".nox",
-    ".pants.d",
-    ".pytype",
-    ".ruff_cache",
-    ".svn",
-    ".tox",
-    ".venv",
-    "__pypackages__",
-    "_build",
-    "buck-out",
-    "build",
-    "dist",
-    "node_modules",
-    "venv",
-    # Ignore the following additional directories and files
-    "docs",
-    "tests",
+    ".bzr", ".direnv", ".eggs", ".git", ".git-rewrite", ".hg", ".mypy_cache", ".nox",
+    ".pants.d", ".pytype", ".ruff_cache", ".svn", ".tox", ".venv", "__pypackages__",
+    "_build", "buck-out", "build", "dist", "node_modules", "venv", "docs", "tests"
 ]
 line-length = 100
 indent-width = 4
@@ -92,10 +73,7 @@ target-version = "py310"
 
 [tool.ruff.lint]
 select = ["ANN", "D", "E", "F", "I"]
-ignore = [
-    # Ignore docstring errors
-    "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107",
-]
+ignore = ["D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107"]
 fixable = ["ALL"]
 unfixable = []
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
@@ -112,7 +90,6 @@ convention = "google"
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*.py" = []
 
-# Pyright configuration
 [tool.pyright]
 include = ["src", "tests"]
 venvPath = "."
