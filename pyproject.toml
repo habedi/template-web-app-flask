@@ -5,9 +5,9 @@ description = "A template for a web application built with Flask"
 authors = [
     { name = "Hassan Abedi", email = "hassan.abedi.t@gmail.com" }
 ]
-license = {text = "MIT"}
+license = { text = "MIT" }
 readme = "README.md"
-requires-python =  ">=3.10,<4.0"
+requires-python = ">=3.10,<4.0"
 
 dependencies = [
     "python-dotenv>=1.1.0",
