@@ -50,29 +50,63 @@ dev = [
     "pyright>=1.1.399"
 ]
 
+[tool.poetry]
+package-mode = false
+
 [tool.pytest.ini_options]
-pythonpath = [".", "src"]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = [
+    "--tb=short",
+    #"--disable-warnings",
+    "--cov=src",
+    "--cov-branch",
+    "--cov-report=term",
+    "--cov-report=xml",
+    "-rs"
+]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+asyncio_default_test_loop_scope = "function"
+
+[tool.coverage.run]
+branch = true
+parallel = true
+source = ["."]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+show_missing = false
+skip_empty = true
+precision = 2
 
 [tool.mypy]
 python_version = "3.10"
 ignore_missing_imports = true
+disallow_untyped_defs = true
 disallow_untyped_calls = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+warn_return_any = true
 strict_optional = true
 warn_redundant_casts = true
+exclude = "^(examples/|tests/)"
 
 [tool.ruff]
 exclude = [
-    ".bzr", ".direnv", ".eggs", ".git", ".git-rewrite", ".hg", ".mypy_cache", ".nox",
-    ".pants.d", ".pytype", ".ruff_cache", ".svn", ".tox", ".venv", "__pypackages__",
-    "_build", "buck-out", "build", "dist", "node_modules", "venv", "docs", "tests"
+    ".bzr", ".direnv", ".eggs", ".git", ".git-rewrite", ".hg", ".mypy_cache",
+    ".nox", ".pants.d", ".pytype", ".ruff_cache", ".svn", ".tox", ".venv",
+    "__pypackages__", "_build", "buck-out", "build", "dist", "node_modules", "venv",
+    "tests"
 ]
 line-length = 100
 indent-width = 4
 src = ["src"]
 target-version = "py310"
+unsafe-fixes = false
 
 [tool.ruff.lint]
-select = ["ANN", "D", "E", "F", "I"]
+select = ["ANN", "E", "F", "I", "W", "B", "RUF", "SIM", "C90"]
 ignore = ["D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107"]
 fixable = ["ALL"]
 unfixable = []
@@ -89,9 +123,3 @@ convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*.py" = []
-
-[tool.pyright]
-include = ["src", "tests"]
-venvPath = "."
-venv = ".venv"
-strict = ["src/**/*.py"]
