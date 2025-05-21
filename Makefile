@@ -58,15 +58,15 @@ test: ## Run the tests
 
 .PHONY: lint
 lint: ## Run the linter checks (with autofix enabled)
-	@$(POETRY) run ruff check --fix .
+	@$(POETRY) run ruff check --fix
 
 .PHONY: format
 format: ## Format the Python code
-	@$(POETRY) run ruff format .
+	@$(POETRY) run ruff format
 
 .PHONY: typecheck
 typecheck: ## Typecheck Python code
-	@$(POETRY) run mypy -p src
+	@$(POETRY) run mypy .
 
 .PHONY: clean
 clean: ## Remove temporary files and directories

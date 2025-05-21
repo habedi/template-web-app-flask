@@ -1,5 +1,4 @@
 import click
-
 from src.app import create_app, db
 from src.app.models import User
 
