@@ -26,9 +26,12 @@ CONTAINER_NAME := my-flask-app
 .DEFAULT_GOAL := help
 
 .PHONY: help
-help: ## Show help messages for all available targets
+help: ## Show the help messages for all targets
+	@echo "Usage: make <target>"
+	@echo ""
+	@echo "Targets:"
 	@grep -E '^[a-zA-Z_-]+:.*## .*$$' Makefile | \
-	awk 'BEGIN {FS = ":.*## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	awk 'BEGIN {FS = ":.*## "}; {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
 ####################################################################################################
 ## Python Targets
