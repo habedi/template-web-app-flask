@@ -1,9 +1,8 @@
 ## A Flask Web Application Template
 
 [![Tests](https://img.shields.io/github/actions/workflow/status/habedi/template-web-app-flask/tests.yml?label=tests&style=flat&labelColor=282c34&logo=github)](https://github.com/habedi/template-web-app-flask/actions/workflows/tests.yml)
-[![Lints](https://img.shields.io/github/actions/workflow/status/habedi/template-web-app-flask/lints.yml?label=lints&style=flat&labelColor=282c34&logo=github)](https://github.com/habedi/template-web-app-flask/actions/workflows/lints.yml)
-[![Code Coverage](https://img.shields.io/codecov/c/github/habedi/template-web-app-flask?style=flat&labelColor=282c34&color=ffca28&logo=codecov)](https://codecov.io/gh/habedi/template-web-app-flask)
-[![CodeFactor](https://img.shields.io/codefactor/grade/github/habedi/template-web-app-flask?style=flat&labelColor=282c34&color=4caf50&logo=codefactor)](https://www.codefactor.io/repository/github/habedi/template-web-app-flask)
+[![Code Coverage](https://img.shields.io/codecov/c/github/habedi/template-web-app-flask?style=flat&labelColor=282c34&logo=codecov)](https://codecov.io/gh/habedi/template-web-app-flask)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/habedi/template-web-app-flask?style=flat&labelColor=282c34&logo=codefactor)](https://www.codefactor.io/repository/github/habedi/template-web-app-flask)
 [![Python version](https://img.shields.io/badge/python-%3E=3.10-3776ab?style=flat&labelColor=282c34&logo=python)](https://github.com/habedi/template-web-app-flask)
 [![Docs](https://img.shields.io/badge/docs-latest-007ec6?style=flat&labelColor=282c34&logo=readthedocs)](https://github.com/habedi/template-web-app-flask/blob/main/docs/README.md)
 [![License](https://img.shields.io/badge/license-MIT-007ec6?style=flat&labelColor=282c34&logo=open-source-initiative)](https://github.com/habedi/template-web-app-flask/blob/main/LICENSE)
