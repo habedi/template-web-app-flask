@@ -7,7 +7,6 @@ from flask_login import LoginManager, current_user, login_required
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import CSRFProtect
-
 from src.config import DevelopmentConfig  # Import config from src/config.py
 
 # Initialize extensions

@@ -14,11 +14,12 @@ trim_trailing_whitespace = true # Remove trailing whitespace
 
 # Python specific settings, complying with PEP 8 style guide, except for the line length
 [*.py]
-max_line_length = 100 # Limit lines to 100 characters
+max_line_length = 100
 
 # Markdown files
 [*.md]
-trim_trailing_whitespace = false # Don't remove trailing whitespace in Markdown files
+trim_trailing_whitespace = false
+max_line_length = 130
 
 # Shell scripts
 [*.sh]
@@ -31,3 +32,7 @@ indent_size = 2
 # HTML files
 [*.html]
 max_line_length = 130
+
+# JSON files
+[*.json]
+indent_size = 2
