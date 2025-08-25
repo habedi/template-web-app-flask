@@ -30,6 +30,7 @@ jobs:
         run: |
           make setup
           make install-dev
+          make db-init
 
       - name: Run Tests with Coverage
         run: |
