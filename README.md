@@ -4,8 +4,8 @@
 [![Code Coverage](https://img.shields.io/codecov/c/github/habedi/template-web-app-flask?style=flat&labelColor=282c34&logo=codecov)](https://codecov.io/gh/habedi/template-web-app-flask)
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/habedi/template-web-app-flask?style=flat&labelColor=282c34&logo=codefactor)](https://www.codefactor.io/repository/github/habedi/template-web-app-flask)
 [![Python version](https://img.shields.io/badge/python-%3E=3.10-3776ab?style=flat&labelColor=282c34&logo=python)](https://github.com/habedi/template-web-app-flask)
-[![Docs](https://img.shields.io/badge/docs-latest-007ec6?style=flat&labelColor=282c34&logo=readthedocs)](https://github.com/habedi/template-web-app-flask/blob/main/docs/README.md)
-[![License](https://img.shields.io/badge/license-MIT-007ec6?style=flat&labelColor=282c34&logo=open-source-initiative)](https://github.com/habedi/template-web-app-flask/blob/main/LICENSE)
+[![Docs](https://img.shields.io/badge/docs-latest-8ca0d7?style=flat&labelColor=282c34&logo=readthedocs)](https://github.com/habedi/template-web-app-flask/blob/main/docs/README.md)
+[![License](https://img.shields.io/badge/license-MIT-00acc1?style=flat&labelColor=282c34&logo=open-source-initiative)](https://github.com/habedi/template-web-app-flask/blob/main/LICENSE)
 
 This is a template for building [Flask](https://flask.palletsprojects.com/en/stable/) web applications.
 It provides many useful features right out of the box, including user authentication, database migrations,
