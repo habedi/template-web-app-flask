@@ -1,0 +1,20 @@
+body{
+    font-family:Inter,system-ui,sans-serif;
+}
+
+.card{
+    border:none;
+    border-radius:14px;
+}
+
+.progress{
+    border-radius:999px;
+}
+
+.navbar-brand{
+    letter-spacing:.5px;
+}
+
+footer{
+    font-size:.9rem;
+}
