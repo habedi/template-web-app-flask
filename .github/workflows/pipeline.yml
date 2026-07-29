@@ -31,26 +31,50 @@ jobs:
         run: |
           pytest
 
-      - name: Package Application
+      - name: Build Release Package
         run: |
           zip -r release.zip . \
-            -x ".git/*" ".venv/*" "__pycache__/*" ".pytest_cache/*"
+            -x ".git/*" \
+               ".github/*" \
+               ".venv/*" \
+               "__pycache__/*" \
+               ".pytest_cache/*"
 
-      - name: Verify Build Artifact
+      - name: Generate SHA256 Checksum
         run: |
-          ls -lh release.zip
+          sha256sum release.zip > release.sha256
 
-      - name: Simulate Deployment
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: taskflow-build
+          path: |
+            release.zip
+            release.sha256
+          retention-days: 7
+
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: taskflow-build
+          path: deployment
+
+      - name: Verify Artifact Integrity
         run: |
-          echo "Deploying TaskFlow..."
-          sleep 3
-          echo "Deployment Complete."
+          cd deployment
+          sha256sum -c release.sha256
+
+      - name: Deploy to Production (Simulated)
+        run: |
+          mkdir deployed-app
+          unzip deployment/release.zip -d deployed-app
+          echo "Application deployed successfully."
 
       - name: Smoke Test
         run: |
-          echo "Checking application health..."
-          echo "Application Healthy"
+          test -f deployed-app/app.py
+          echo "Health Check Passed"
 
       - name: Pipeline Summary
         run: |
-          echo "TaskFlow successfully built, tested and deployed."
+          echo "TaskFlow built, packaged, verified and deployed successfully."
