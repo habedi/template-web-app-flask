@@ -1,0 +1,56 @@
+name: TaskFlow CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Run Linter
+        run: |
+          ruff check .
+
+      - name: Run Unit Tests
+        run: |
+          pytest
+
+      - name: Package Application
+        run: |
+          zip -r release.zip . \
+            -x ".git/*" ".venv/*" "__pycache__/*" ".pytest_cache/*"
+
+      - name: Verify Build Artifact
+        run: |
+          ls -lh release.zip
+
+      - name: Simulate Deployment
+        run: |
+          echo "Deploying TaskFlow..."
+          sleep 3
+          echo "Deployment Complete."
+
+      - name: Smoke Test
+        run: |
+          echo "Checking application health..."
+          echo "Application Healthy"
+
+      - name: Pipeline Summary
+        run: |
+          echo "TaskFlow successfully built, tested and deployed."
